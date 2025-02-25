@@ -1,18 +1,5 @@
 // Project data
-const projects = [
-    {
-        title: "Jatango",
-        description: "Live e-commerce platform enabling shop owners to create Facebook live shows and add products to cart. Built with Next.js and TypeScript, focusing on high performance and responsiveness.",
-        image: "https://via.placeholder.com/300x200",
-        tags: ["Next.js", "TypeScript", "E-commerce"]
-    },
-    {
-        title: "E-Typist",
-        description: "Audio-to-document transcription service for legal proceedings and medical cases. Developed using React.js and JavaScript with comprehensive version control using Git.",
-        image: "https://via.placeholder.com/300x200",
-        tags: ["React.js", "JavaScript", "Git"]
-    }
-];
+
 
 // Load projects
 function loadProjects() {
