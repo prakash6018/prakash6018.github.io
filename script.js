@@ -1,18 +1,5 @@
 // Project data
-const projects = [
-    {
-        title: "Jatango",
-        description: "Live e-commerce platform enabling shop owners to create Facebook live shows and add products to cart. Built with Next.js and TypeScript, focusing on high performance and responsiveness.",
-        image: "https://via.placeholder.com/300x200",
-        tags: ["Next.js", "TypeScript", "E-commerce"]
-    },
-    {
-        title: "E-Typist",
-        description: "Audio-to-document transcription service for legal proceedings and medical cases. Developed using React.js and JavaScript with comprehensive version control using Git.",
-        image: "https://via.placeholder.com/300x200",
-        tags: ["React.js", "JavaScript", "Git"]
-    }
-];
+
 
 // Load projects
 function loadProjects() {
@@ -61,7 +48,39 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('toggle');
 });
 
-// Initialize
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
+
+    // Simple theme switcher
+    const checkbox = document.getElementById('checkbox');
+    
+    // Check if theme is stored in localStorage
+    const theme = localStorage.getItem('theme');
+    console.log('Current theme:', theme); // Debug log
+    
+    // Apply theme on page load
+    if (theme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        checkbox.checked = true;
+    }
+    
+    // Handle theme toggle
+    checkbox.addEventListener('change', (e) => {
+        console.log('Checkbox changed:', e.target.checked); // Debug log
+        
+        if (e.target.checked) {
+            document.body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            console.log('Set dark theme'); // Debug log
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            console.log('Set light theme'); // Debug log
+        }
+    });
+
+    // Debug: Log initial state
+    console.log('Initial checkbox state:', checkbox.checked);
+    console.log('Initial body data-theme:', document.body.getAttribute('data-theme'));
 });
