@@ -1,126 +1,800 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Prakash Reddy | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description"
+        content="Sai Prakash Reddy Chandupatla - Software Engineer with 2+ years of experience. Adaptable to any tech stack with AI-powered coding skills. Building exceptional web applications with React, Next.js, TypeScript, and beyond.">
+    <meta name="keywords"
+        content="Software Engineer, Full Stack Developer, React, Next.js, TypeScript, GraphQL, AI Coding, Web Development, Portfolio">
+    <meta name="author" content="Sai Prakash Reddy Chandupatla">
+    <title>Sai Prakash Reddy | Software Engineer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Vanilla Tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <nav>
-        <div class="logo">Sai Prakash Reddy Chandupatla</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+
+<body class="font-sans bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="logo-text">SPR</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <p class="loader-text">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#home"
+                    class="text-xl md:text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">
+                    SPR
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <!-- Dark Mode Toggle & Mobile Menu Button -->
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle"
+                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fas fa-moon dark:hidden text-gray-700"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700">
+            <ul class="px-4 py-4 space-y-3">
+                <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link">About</a></li>
+                <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hey there! I'm <span class="highlight">Sai Prakash Reddy</span></h1>
-            <p>A Developer who loves turning ideas into reality with code.</p>
-            <p>I build sleek, high-performance web apps—and I make sure they feel just right.</p>
-           
-            <a href="#projects" class="cta-button">Check Out My Work</a>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Particles Background -->
+        <div id="particles-js" class="particles-container"></div>
+        <!-- Animated Background -->
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+            <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
         </div>
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p class="summary">I'm a passionate developer with over 2 years of experience crafting intuitive user experiences. I use AI to supercharge my workflow, making me adaptable to any tech stack.</p>
-        <h3>What I’m Into</h3>
-        <p>I love keeping up with the latest in web development, especially:</p>
-        <ul>
-            <li>Making web apps blazing fast with server-side rendering (SSR) in Next.js.</li>
-            <li>Writing clean, scalable code using TypeScript.</li>
-            <li>Optimizing data flow with GraphQL.</li>
-        </ul>
-       
-        <h3>More Than Just Code</h3>
-        <p>I don’t just write code—I make sure it works flawlessly. With a strong background in manual testing, I combine human intuition with AI-driven automation to catch even the trickiest bugs.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Some Cool Stuff I’ve Built</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Order Picking System</h3>
-                <p>Designed an efficient order-picking and packing system that reduced warehouse errors by 25%.</p>
-                <p><strong>Tech Stack:</strong> React.js, Next.js, TypeScript, GraphQL</p>
-            </div>
-            <div class="project-card">
-                <h3>Shipment Tracker</h3>
-                <p>Developed a real-time shipment tracking UI, making logistics smoother and more transparent.</p>
-                <p><strong>Tech Stack:</strong> React.js, Material-UI, GraphQL</p>
-            </div>
-            <div class="project-card">
-                <h3>Company & Address Search (HERE API)</h3>
-                <p>Built a smart location search tool that finds addresses and companies dynamically.</p>
-                <p><strong>Tech Stack:</strong> React.js, Next.js, HERE API</p>
-            </div>
-            <div class="project-card">
-                <h3>Audio Player with Foot Pedal Support</h3>
-                <p>Created a hands-free audio player for transcribers using foot pedal integration.</p>
-                <p><strong>Tech Stack:</strong> React.js, Material-UI, JavaScript</p>
-            </div>
+        <!-- Floating Shapes -->
+        <div
+            class="absolute top-20 left-10 w-72 h-72 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-20 animate-blob">
         </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2>Skills & Expertise</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Frontend Development</h3>
-                <p>HTML5, CSS3, JavaScript, React,Next.JS,Typescript</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>Backend Development</h3>
-                <p>Node.js, Python, SQL</p>
-            </div>
-           
+        <div
+            class="absolute top-40 right-10 w-72 h-72 bg-yellow-300 dark:bg-yellow-900 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-20 animate-blob animation-delay-2000">
         </div>
-    </section>
+        <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-900 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-20 animate-blob animation-delay-4000">
+        </div>
 
-    <section id="cool-stuff">
-        <p>When I’m not coding, I love exploring AI tools, automating workflows, and testing new tech. Here are a few things I enjoy:</p>
-        <ul>
-            <li>Building AI-assisted coding workflows to boost productivity.</li>
-            <li>Experimenting with creative front-end animations and interactions.</li>
-            <li>Testing out new development tools that make life easier.</li>
-            <li>Gaming, because problem-solving applies everywhere!</li>
-        </ul>
-    </section>
+        <!-- Magnetic Cursor -->
+        <div id="magnetic-cursor" class="magnetic-cursor"></div>
 
-    <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-info">
-            <p>Feel free to reach out! I'm always open to new opportunities and conversations.</p>
-            <div class="contact-links">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:prakashreddy8689@gmail.com">prakashreddy8689@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+917095196018">+91 7095196018</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/sai-prakash-reddy-chandupatla-13910a174/" target="_blank">LinkedIn Profile</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/prakash6018" target="_blank">GitHub Profile</a>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="hero-content-wrapper">
+                <p class="text-indigo-600 dark:text-cyan-400 font-semibold mb-4 text-lg">Hi, my name is</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span
+                        class="bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
+                        Sai Prakash Reddy
+                    </span>
+                </h1>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-700 dark:text-gray-300 mb-6">
+                    Software Engineer
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+                    <span id="typed-text"></span>
+                    <span class="typing-cursor">|</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="btn-primary">
+                        View My Work
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        Get In Touch
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+        </div>
     </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-title-underline"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        I'm a <span class="font-semibold text-indigo-600 dark:text-cyan-400">Software Engineer</span>
+                        with over
+                        <span class="font-semibold text-indigo-600 dark:text-cyan-400">2 years of experience</span>
+                        building robust, scalable applications
+                        that solve real-world problems.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        What sets me apart? I'm <span class="font-semibold text-indigo-600 dark:text-cyan-400">adaptable
+                            to any tech stack</span>.
+                        Whether it's React, Next.js, TypeScript, Python, or Node.js—I leverage <span
+                            class="font-semibold text-indigo-600 dark:text-cyan-400">AI-powered coding tools</span>
+                        to rapidly master new technologies and deliver high-quality solutions.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        From frontend interfaces to backend APIs, from databases to deployment pipelines—I build
+                        end-to-end solutions.
+                        My superpower? <span class="font-semibold text-indigo-600 dark:text-cyan-400">Learning fast,
+                            coding smart, and shipping quality</span>.
+                    </p>
+
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">My Engineering Vibe:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-rocket text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Stack-agnostic:</strong> Pick any
+                                    tech, I'll master it with AI-assisted learning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-brain text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>AI-powered:</strong> Leveraging
+                                    cutting-edge tools to code faster and smarter</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-layer-group text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Full-stack mindset:</strong> From
+                                    pixel-perfect UIs to robust backend systems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bolt text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Ship quality:</strong> Clean
+                                    code, thorough testing, production-ready solutions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fade-in-right">
+                    <div class="relative">
+                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 p-1">
+                            <div
+                                class="w-full h-full rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <i class="fas fa-code text-8xl text-indigo-600 dark:text-cyan-400 mb-6"></i>
+                                    <p class="text-2xl font-bold text-gray-900 dark:text-white mb-2">2+ Years</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Professional Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="section-title-underline"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline Item -->
+                <div class="timeline-item fade-in-up">
+                    <div class="timeline-content">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Software Engineer</h3>
+                            <span class="text-indigo-600 dark:text-cyan-400 font-semibold">2022 - Present</span>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">Building enterprise-level applications
+                            across the full stack</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Developed order-picking system reducing
+                                    warehouse errors by 25%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Built real-time shipment tracking UI
+                                    improving logistics transparency</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Implemented location search with HERE API
+                                    integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Created innovative audio player with foot
+                                    pedal support for transcribers</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">GraphQL</span>
+                            <span class="tech-badge">Material-UI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-title-underline"></div>
+                <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg">Some of the cool stuff I've built</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card fade-in-up">
+                    <div class="project-card-header">
+                        <i class="fas fa-box text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Order Picking System</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Designed an efficient order-picking and packing system that reduced warehouse errors by 25%,
+                        streamlining logistics operations and improving overall productivity.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">React.js</span>
+                            <span class="tech-badge-sm">Next.js</span>
+                            <span class="tech-badge-sm">TypeScript</span>
+                            <span class="tech-badge-sm">GraphQL</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-chart-line text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">25% Error Reduction</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card fade-in-up animation-delay-200">
+                    <div class="project-card-header">
+                        <i class="fas fa-shipping-fast text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Shipment Tracker</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Developed a real-time shipment tracking UI that makes logistics smoother and more transparent,
+                        providing customers with up-to-date delivery information.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">React.js</span>
+                            <span class="tech-badge-sm">Material-UI</span>
+                            <span class="tech-badge-sm">GraphQL</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-clock text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">Real-time Updates</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card fade-in-up animation-delay-400">
+                    <div class="project-card-header">
+                        <i class="fas fa-map-marked-alt text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Company & Address Search</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Built a smart location search tool using HERE API that dynamically finds addresses and
+                        companies,
+                        enhancing user experience with autocomplete and accurate results.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">React.js</span>
+                            <span class="tech-badge-sm">Next.js</span>
+                            <span class="tech-badge-sm">HERE API</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-search-location text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">Smart Search</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card fade-in-up animation-delay-600">
+                    <div class="project-card-header">
+                        <i class="fas fa-headphones text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Audio Player with Foot Pedal</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Created a hands-free audio player for transcribers using foot pedal integration,
+                        allowing seamless playback control while typing.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">React.js</span>
+                            <span class="tech-badge-sm">Material-UI</span>
+                            <span class="tech-badge-sm">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-hands-helping text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">Hands-free Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="section-title-underline"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Development -->
+                <div class="skill-card fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Frontend Development</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">React.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Next.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">TypeScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Styling & UI -->
+                <div class="skill-card fade-in-up animation-delay-200">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Styling & UI</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">HTML5 & CSS3</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Material-UI</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Responsive Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 93%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & APIs -->
+                <div class="skill-card fade-in-up animation-delay-400">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Backend & APIs</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Express.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">REST APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">GraphQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card fade-in-up animation-delay-500">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Databases</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">PostgreSQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">MongoDB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="skill-card fade-in-up animation-delay-600">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">DevOps</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">CI/CD</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Git Actions</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Technologies -->
+                <div class="skill-card fade-in-up animation-delay-700">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Cloud Technologies</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">AWS (EC2, S3)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Vercel</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Netlify</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Workflow -->
+                <div class="skill-card fade-in-up animation-delay-800">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Tools & Workflow</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Git & GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">VS Code</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">AI Tools</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Agile/Scrum</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testing & QA -->
+                <div class="skill-card fade-in-up animation-delay-900">
+                    <div class="skill-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Testing & QA</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Manual Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Test Automation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Debugging</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Performance Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Interests -->
+                <div class="skill-card fade-in-up animation-delay-1000">
+                    <div class="skill-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Beyond Code</h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-robot text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span>AI-assisted coding workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-magic text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span>Creative animations & interactions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-rocket text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span>Exploring new dev tools</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-gamepad text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span>Gaming & problem-solving</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact"
+        class="py-20 bg-gradient-to-br from-indigo-50 to-cyan-50 dark:from-slate-800 dark:to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-title-underline"></div>
+                <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
+                    I'm always open to new opportunities and conversations. Feel free to reach out!
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Email -->
+                    <a href="mailto:prakashreddy8689@gmail.com" class="contact-card fade-in-up">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
+                            <p class="text-indigo-600 dark:text-cyan-400">prakashreddy8689@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+917095196018" class="contact-card fade-in-up animation-delay-200">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
+                            <p class="text-indigo-600 dark:text-cyan-400">+91 7095196018</p>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/sai-prakash-reddy-chandupatla-13910a174/" target="_blank"
+                        class="contact-card fade-in-up animation-delay-400">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">LinkedIn</h3>
+                            <p class="text-indigo-600 dark:text-cyan-400">Connect with me</p>
+                        </div>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/prakash6018" target="_blank"
+                        class="contact-card fade-in-up animation-delay-600">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">GitHub</h3>
+                            <p class="text-indigo-600 dark:text-cyan-400">Check out my code</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-600 dark:text-gray-400">
+                    © 2026 Sai Prakash Reddy Chandupatla. Built with
+                    <i class="fas fa-heart text-red-500 mx-1"></i>
+                    and <span class="text-indigo-600 dark:text-cyan-400 font-semibold">Tailwind CSS</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
+
 </html>
