@@ -107,10 +107,10 @@ function initParticles() {
 // ============================================
 const typedTextElement = document.getElementById('typed-text');
 const textArray = [
-    "I craft exceptional software solutions.",
-    "Adaptable to any tech stack.",
-    "Powered by AI-enhanced coding.",
-    "Delivering results that matter."
+    "2.5+ years building production-grade applications.",
+    "Specialized in React, Next.js & headless commerce.",
+    "Powered by AI-enhanced development tools.",
+    "Delivering scalable solutions with 95%+ test coverage."
 ];
 let textArrayIndex = 0;
 let charIndex = 0;

@@ -31,6 +31,10 @@
 
     <!-- Vanilla Tilt.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -124,6 +128,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Three.js 3D Background -->
+        <canvas id="three-canvas"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+
         <!-- Particles Background -->
         <div id="particles-js" class="particles-container"></div>
         <!-- Animated Background -->
@@ -162,6 +170,10 @@
                     <span id="typed-text"></span>
                     <span class="typing-cursor">|</span>
                 </p>
+                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+                    Building production-grade SaaS, e-commerce, and marketing applications with rapid delivery using
+                    AI-assisted development
+                </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#projects" class="btn-primary">
                         View My Work
@@ -193,22 +205,25 @@
                     <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                         I'm a <span class="font-semibold text-indigo-600 dark:text-cyan-400">Software Engineer</span>
                         with over
-                        <span class="font-semibold text-indigo-600 dark:text-cyan-400">2 years of experience</span>
-                        building robust, scalable applications
-                        that solve real-world problems.
+                        <span class="font-semibold text-indigo-600 dark:text-cyan-400">2.5 years of experience</span>
+                        building production-grade SaaS, e-commerce, and marketing applications that serve thousands of
+                        users.
                     </p>
                     <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                        What sets me apart? I'm <span class="font-semibold text-indigo-600 dark:text-cyan-400">adaptable
-                            to any tech stack</span>.
-                        Whether it's React, Next.js, TypeScript, Python, or Node.js—I leverage <span
+                        As a core engineer in a 3-developer team at <span
+                            class="font-semibold text-indigo-600 dark:text-cyan-400">NCompas Business Solutions</span>,
+                        I've delivered 5+ live client projects, specializing in <span
+                            class="font-semibold text-indigo-600 dark:text-cyan-400">React, Next.js, TypeScript,
+                            headless commerce, and payment integrations</span>. I own features end-to-end—from
+                        architecture to deployment.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        What sets me apart? I leverage <span
                             class="font-semibold text-indigo-600 dark:text-cyan-400">AI-powered coding tools</span>
-                        to rapidly master new technologies and deliver high-quality solutions.
-                    </p>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                        From frontend interfaces to backend APIs, from databases to deployment pipelines—I build
-                        end-to-end solutions.
-                        My superpower? <span class="font-semibold text-indigo-600 dark:text-cyan-400">Learning fast,
-                            coding smart, and shipping quality</span>.
+                        to rapidly master new technologies and deliver high-quality solutions. From SSR optimization to
+                        Shopify headless storefronts,
+                        from Stripe webhooks to GraphQL APIs—I build scalable, performant applications with <span
+                            class="font-semibold text-indigo-600 dark:text-cyan-400">95%+ test coverage</span>.
                     </p>
 
                     <div class="mt-8">
@@ -265,43 +280,122 @@
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <!-- Timeline Item -->
+                <!-- Timeline Item 1 - Software Engineer -->
                 <div class="timeline-item fade-in-up">
                     <div class="timeline-content">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                             <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Software Engineer</h3>
-                            <span class="text-indigo-600 dark:text-cyan-400 font-semibold">2022 - Present</span>
+                            <span class="text-indigo-600 dark:text-cyan-400 font-semibold">Dec 2023 - Present</span>
                         </div>
-                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">Building enterprise-level applications
-                            across the full stack</p>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">NCompas Business Solutions | Hyderabad
+                        </p>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Developed order-picking system reducing
-                                    warehouse errors by 25%</span>
+                                <span class="text-gray-700 dark:text-gray-300">Core engineer in 3-developer team
+                                    delivering SaaS and commerce platforms across 5+ live client projects</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Built real-time shipment tracking UI
-                                    improving logistics transparency</span>
+                                <span class="text-gray-700 dark:text-gray-300">Built scalable Next.js SSR apps improving
+                                    page load speed by 20%</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Implemented location search with HERE API
-                                    integration</span>
+                                <span class="text-gray-700 dark:text-gray-300">Developed headless Shopify storefronts
+                                    with custom React frontends</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Created innovative audio player with foot
-                                    pedal support for transcribers</span>
+                                <span class="text-gray-700 dark:text-gray-300">Integrated Stripe and Razorpay (checkout,
+                                    subscriptions, webhooks, retries)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Reduced API latency by 30% via GraphQL
+                                    optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Owned Vercel deployments, CI/CD
+                                    pipelines, and zero-downtime releases</span>
                             </li>
                         </ul>
                         <div class="mt-6 flex flex-wrap gap-2">
                             <span class="tech-badge">React.js</span>
                             <span class="tech-badge">Next.js</span>
                             <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Shopify</span>
+                            <span class="tech-badge">Stripe</span>
+                            <span class="tech-badge">Razorpay</span>
                             <span class="tech-badge">GraphQL</span>
+                            <span class="tech-badge">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 - Associate Software Engineer -->
+                <div class="timeline-item fade-in-up animation-delay-200">
+                    <div class="timeline-content">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Associate Software Engineer
+                            </h3>
+                            <span class="text-indigo-600 dark:text-cyan-400 font-semibold">Apr 2023 - Dec 2023</span>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">NCompas Business Solutions | Hyderabad
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Built responsive UI features using React
+                                    and TypeScript</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Created reusable components reducing
+                                    development time by 30%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Integrated backend APIs and PostgreSQL
+                                    databases</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Collaborated in Agile sprints with
+                                    cross-functional teams</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">TypeScript</span>
                             <span class="tech-badge">Material-UI</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Section -->
+                <div
+                    class="mt-12 p-8 bg-gradient-to-r from-indigo-50 to-cyan-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl fade-in-up animation-delay-400">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">🏆 Achievements</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Fast-track Promotion</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Promoted from Associate to Software Engineer
+                                    within 9 months</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-award text-indigo-600 dark:text-cyan-400 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Best Team Player Award</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Recognized for collaboration and ownership
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,101 +413,141 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project Card 1 -->
+                <!-- Project Card 1 - Jatango -->
                 <div class="project-card fade-in-up">
                     <div class="project-card-header">
-                        <i class="fas fa-box text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                        <i class="fas fa-shopping-cart text-4xl text-indigo-600 dark:text-cyan-400"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Order Picking System</h3>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Jatango</h3>
+                    <p class="text-sm text-indigo-600 dark:text-cyan-400 font-semibold mb-2">🔴 LIVE - Commerce Platform
+                    </p>
                     <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                        Designed an efficient order-picking and packing system that reduced warehouse errors by 25%,
-                        streamlining logistics operations and improving overall productivity.
+                        Built a live commerce platform with SSR storefront, real-time inventory management, and
+                        optimized bundle size by 35%.
+                        Serving 2,000+ monthly users with seamless shopping experience.
                     </p>
                     <div class="mb-4">
                         <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge-sm">React.js</span>
+                            <span class="tech-badge-sm">Next.js SSR</span>
+                            <span class="tech-badge-sm">React</span>
+                            <span class="tech-badge-sm">TypeScript</span>
+                            <span class="tech-badge-sm">Vercel</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-users text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">2,000+ Monthly Users</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 - B-Lush -->
+                <div class="project-card fade-in-up animation-delay-200">
+                    <div class="project-card-header">
+                        <i class="fab fa-shopify text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">B-Lush by Parmita</h3>
+                    <p class="text-sm text-indigo-600 dark:text-cyan-400 font-semibold mb-2">🔴 LIVE - Headless Shopify
+                        Store</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Developed a headless Shopify storefront with custom React frontend, integrated payment gateways
+                        (Stripe, Razorpay),
+                        and CMS-driven marketing content for a performance-focused e-commerce experience.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">Shopify Headless</span>
+                            <span class="tech-badge-sm">React</span>
+                            <span class="tech-badge-sm">Stripe</span>
+                            <span class="tech-badge-sm">Razorpay</span>
+                            <span class="tech-badge-sm">Strapi CMS</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-rocket text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">Headless Commerce</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 - E-Typist -->
+                <div class="project-card fade-in-up animation-delay-400">
+                    <div class="project-card-header">
+                        <i class="fas fa-microphone text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">E-Typist</h3>
+                    <p class="text-sm text-indigo-600 dark:text-cyan-400 font-semibold mb-2">Audio Transcription Tool
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Created an accessible audio transcription tool with speech-to-text API integration,
+                        optimized rendering with React memoization, and intuitive UI for professional transcribers.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">React</span>
+                            <span class="tech-badge-sm">Speech-to-Text API</span>
+                            <span class="tech-badge-sm">Material-UI</span>
+                            <span class="tech-badge-sm">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-universal-access text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">Accessible Design</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 - Floora -->
+                <div class="project-card fade-in-up animation-delay-600">
+                    <div class="project-card-header">
+                        <i class="fas fa-leaf text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Floora</h3>
+                    <p class="text-sm text-indigo-600 dark:text-cyan-400 font-semibold mb-2">🔴 LIVE - Full-Stack
+                        Application</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Delivered full-stack features with seamless integrations, production deployment on Vercel,
+                        and end-to-end ownership from architecture to release.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">Next.js</span>
+                            <span class="tech-badge-sm">TypeScript</span>
+                            <span class="tech-badge-sm">Node.js</span>
+                            <span class="tech-badge-sm">Vercel</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">Production Ready</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 - AI Navigator Collective -->
+                <div class="project-card fade-in-up animation-delay-800">
+                    <div class="project-card-header">
+                        <i class="fas fa-brain text-4xl text-indigo-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">AI Navigator Collective</h3>
+                    <p class="text-sm text-indigo-600 dark:text-cyan-400 font-semibold mb-2">🔴 LIVE - AI-Powered
+                        Platform</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Built full-stack features for an AI-powered platform with complex integrations,
+                        production deployment, and feature ownership from concept to launch.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">React</span>
                             <span class="tech-badge-sm">Next.js</span>
                             <span class="tech-badge-sm">TypeScript</span>
                             <span class="tech-badge-sm">GraphQL</span>
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <i class="fas fa-chart-line text-indigo-600 dark:text-cyan-400 mr-2"></i>
-                        <span class="text-sm font-semibold">25% Error Reduction</span>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card fade-in-up animation-delay-200">
-                    <div class="project-card-header">
-                        <i class="fas fa-shipping-fast text-4xl text-indigo-600 dark:text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Shipment Tracker</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                        Developed a real-time shipment tracking UI that makes logistics smoother and more transparent,
-                        providing customers with up-to-date delivery information.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge-sm">React.js</span>
-                            <span class="tech-badge-sm">Material-UI</span>
-                            <span class="tech-badge-sm">GraphQL</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <i class="fas fa-clock text-indigo-600 dark:text-cyan-400 mr-2"></i>
-                        <span class="text-sm font-semibold">Real-time Updates</span>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="project-card fade-in-up animation-delay-400">
-                    <div class="project-card-header">
-                        <i class="fas fa-map-marked-alt text-4xl text-indigo-600 dark:text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Company & Address Search</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                        Built a smart location search tool using HERE API that dynamically finds addresses and
-                        companies,
-                        enhancing user experience with autocomplete and accurate results.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge-sm">React.js</span>
-                            <span class="tech-badge-sm">Next.js</span>
-                            <span class="tech-badge-sm">HERE API</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <i class="fas fa-search-location text-indigo-600 dark:text-cyan-400 mr-2"></i>
-                        <span class="text-sm font-semibold">Smart Search</span>
-                    </div>
-                </div>
-
-                <!-- Project Card 4 -->
-                <div class="project-card fade-in-up animation-delay-600">
-                    <div class="project-card-header">
-                        <i class="fas fa-headphones text-4xl text-indigo-600 dark:text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Audio Player with Foot Pedal</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                        Created a hands-free audio player for transcribers using foot pedal integration,
-                        allowing seamless playback control while typing.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge-sm">React.js</span>
-                            <span class="tech-badge-sm">Material-UI</span>
-                            <span class="tech-badge-sm">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <i class="fas fa-hands-helping text-indigo-600 dark:text-cyan-400 mr-2"></i>
-                        <span class="text-sm font-semibold">Hands-free Control</span>
+                        <i class="fas fa-robot text-indigo-600 dark:text-cyan-400 mr-2"></i>
+                        <span class="text-sm font-semibold">AI Integration</span>
                     </div>
                 </div>
             </div>
@@ -559,6 +693,40 @@
                     </div>
                 </div>
 
+                <!-- Commerce & Payments -->
+                <div class="skill-card fade-in-up animation-delay-500">
+                    <div class="skill-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Commerce & Payments</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Shopify Headless</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Stripe</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Razorpay</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Strapi CMS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- DevOps -->
                 <div class="skill-card fade-in-up animation-delay-600">
                     <div class="skill-icon">
@@ -603,7 +771,7 @@
                         <div class="skill-item">
                             <span class="text-gray-700 dark:text-gray-300">Vercel</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
+                                <div class="skill-progress" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -657,54 +825,62 @@
                     <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Testing & QA</h3>
                     <div class="space-y-3">
                         <div class="skill-item">
-                            <span class="text-gray-700 dark:text-gray-300">Manual Testing</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="text-gray-700 dark:text-gray-300">Test Automation</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 78%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="text-gray-700 dark:text-gray-300">Debugging</span>
+                            <span class="text-gray-700 dark:text-gray-300">Cypress</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="text-gray-700 dark:text-gray-300">Performance Testing</span>
+                            <span class="text-gray-700 dark:text-gray-300">Playwright</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Test Coverage (95%+)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-gray-700 dark:text-gray-300">Debugging</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Other Interests -->
+                <!-- AI Tools -->
                 <div class="skill-card fade-in-up animation-delay-1000">
                     <div class="skill-icon">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Beyond Code</h3>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">AI-Powered Development</h3>
                     <ul class="space-y-3 text-gray-700 dark:text-gray-300">
                         <li class="flex items-start">
-                            <i class="fas fa-robot text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                            <span>AI-assisted coding workflows</span>
+                            <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span><strong>Claude Code</strong> - AI pair programming</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-magic text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                            <span>Creative animations & interactions</span>
+                            <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span><strong>GitHub Copilot</strong> - Code completion</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-rocket text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                            <span>Exploring new dev tools</span>
+                            <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span><strong>Cursor</strong> - AI-first IDE</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-gamepad text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
-                            <span>Gaming & problem-solving</span>
+                            <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span><strong>Lovable</strong> - Rapid prototyping</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span><strong>Replit</strong> - Collaborative coding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 dark:text-cyan-400 mt-1 mr-3"></i>
+                            <span><strong>Base44</strong> - AI development platform</span>
                         </li>
                     </ul>
                 </div>
@@ -794,6 +970,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="three-scene.js"></script>
     <script src="script.js"></script>
 </body>
 
