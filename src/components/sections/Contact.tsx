@@ -55,7 +55,9 @@ const Contact = () => {
               href={link.href}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel="noreferrer"
-              className="bg-tertiary rounded-lg px-4 py-3 hover:ring-1 hover:ring-[#915EFF]"
+              className={`bg-tertiary rounded-lg px-4 py-3 hover:ring-1 hover:ring-[#915EFF] ${
+                link.label === "Email" ? "sm:col-span-2" : ""
+              }`}
             >
               <span className="text-secondary block text-[12px] uppercase tracking-wider">
                 {link.label}
