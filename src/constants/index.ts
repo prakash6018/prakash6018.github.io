@@ -34,10 +34,10 @@ export const navLinks: TNavLink[] = [
 ];
 
 const services: TService[] = [
-  { title: 'Full-Stack Web (React · Next.js)', icon: web },
-  { title: 'AI Agents, RAG & LLMs', icon: creator },
-  { title: 'APIs (FastAPI · Node.js)', icon: backend },
-  { title: 'Mobile (Flutter · Compose · SwiftUI)', icon: mobile },
+  { title: 'Full-Stack Web', icon: web },
+  { title: 'AI Agents & RAG', icon: creator },
+  { title: 'Backend & APIs', icon: backend },
+  { title: 'Mobile Apps', icon: mobile },
 ];
 
 // One WebGL canvas per ball; browsers allow ~16 at once, so keep this list short.
