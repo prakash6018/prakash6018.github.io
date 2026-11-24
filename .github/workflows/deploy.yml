@@ -1,19 +1,9 @@
-name: Build and deploy
-
+name: Temporary preview build
 on:
   push:
-    branches: ["**"]
-  workflow_dispatch:
-
+    branches: [tmp-preview-build]
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: true
-
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,20 +13,10 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    # Only main is published; other branches just prove the build works.
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - run: npm ci && npm run build
+      - run: |
+          cd dist
+          git init -q -b tmp-preview-dist
+          git -c user.name=ci -c user.email=ci@example.com add -A
+          git -c user.name=ci -c user.email=ci@example.com commit -qm "preview build"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" tmp-preview-dist
